@@ -1,0 +1,3 @@
+Y<-staphSample(recheck_samp, samplesizes, 5)
+
+ks.test(sort(Y[[1]][4,10,]),sort(meanDist_samp))
