@@ -1,3 +1,15 @@
 Y<-staphSample(recheck_samp, samplesizes, 5)
+Z<-matrix(NA, dim(Y[[1]])[1], dim(Y[[1]])[2])
+for (x in 1:dim(Y[[1]])[1]){
+    for (y in 1:dim(Y[[1]])[2]){
+        Z[x,y]<-ks.test(sort(Y[[1]][x,y,]),sort(meanDist_samp))[[1]]
+    }
+    meanDiff[x]<-mean(Z[x,])
+    
+}
 
-ks.test(sort(Y[[1]][4,10,]),sort(meanDist_samp))
+
+plot(samplesizes, meanDiff)
+
+
+boxplot.matrix(Z, use.cols=FALSE, samplesizes)
