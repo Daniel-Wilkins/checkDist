@@ -27,3 +27,18 @@ for (x in 1:dim(Z)[1]){
         tracker<-tracker+1
     }
 }
+
+
+YYmean<-matrix(NA,5000,2)
+YYmedian<-matrix(NA,5000,2)
+tracker<-1
+for (x in 1:dim(Z)[1]){
+    for (y in 1:dim(Z)[2]){
+        
+            YYmedian[tracker,2]<-median(Y[[2]][x,y,], na.rm=TRUE)
+            YYmedian[tracker,1]<-sum(Y[[2]][x,y,]>0, na.rm=TRUE)
+            YYmean[tracker,2]<-median(Y[[1]][x,y,], na.rm=TRUE)
+            YYmean[tracker,1]<-sum(Y[[1]][x,y,]>0, na.rm=TRUE)
+        tracker<-tracker+1
+    }
+}
