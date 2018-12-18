@@ -13,3 +13,17 @@ plot(samplesizes, meanDiff)
 
 
 boxplot.matrix(Z, use.cols=FALSE, samplesizes)
+#alpha=0.05
+curve(1.36(((x+42663)/(x*42663))^0.5), from=50, to=500, xlab="x", ylab="y")
+#alpha=0.01
+curve(1.63(((x+42663)/(x*42663))^0.5), from=50, to=500, xlab="x", ylab="y")
+
+
+for (x in 1:dim(Z)[1]){
+    for (y in 1:dim(Z)[2]){
+        
+            ZZ[tracker,1]<-Z[x,y]
+            ZZ[tracker,2]<-sum(Y[[1]][x,y,]>0, na.rm=TRUE)
+        tracker<-tracker+1
+    }
+}
