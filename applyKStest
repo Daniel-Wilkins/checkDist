@@ -28,7 +28,6 @@ for (x in 1:dim(Z)[1]){
     }
 }
 
-
 YYmean<-matrix(NA,5000,2)
 YYmedian<-matrix(NA,5000,2)
 tracker<-1
